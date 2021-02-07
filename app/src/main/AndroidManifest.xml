@@ -8,7 +8,9 @@
         android:allowBackup="true"
         android:supportsRtl="true"
         android:theme="@style/Theme.BaseApp2">
-        <activity android:name="activity.Apresentacao"></activity>
+        <activity android:name="activity.HomeEmpresaActivity"></activity>
+        <activity android:name="activity.EmpresaActivity" />
+        <activity android:name="activity.Apresentacao" />
         <activity android:name="activity.CadastroActivity" />
         <activity android:name="activity.LoginActivity" />
         <activity

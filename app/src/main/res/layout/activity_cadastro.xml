@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="32dp"
         android:text="Cadastrar"
         app:backgroundTint="@color/CorFundSlide"
@@ -25,7 +25,7 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="20dp"
         android:text="Crie Sua Conta"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -33,15 +33,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
         android:id="@+id/editNome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:drawableLeft="@drawable/ic_pessoa_cinza"
         android:drawablePadding="10dp"
@@ -59,7 +58,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
         android:drawableLeft="@drawable/ic_email_cinza"
         android:drawablePadding="10dp"
@@ -77,7 +76,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
         android:drawableLeft="@drawable/ic_cadeado_cinza"
         android:drawablePadding="10dp"
@@ -89,5 +88,18 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.29000002"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/icone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

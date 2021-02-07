@@ -27,4 +27,8 @@ public class Apresentacao extends AppCompatActivity {
         startActivity(new Intent(this,CadastroActivity.class));
 
     }
+    public void brEntrarEmpresa(View view){
+        startActivity(new Intent(this,EmpresaActivity.class));
     }
+
+}
