@@ -7,7 +7,7 @@ import config.ConfiguracaoFireBase;
 
 public class Usuario {
 
-    private String nome,email,senha;
+    private String nome,email,senha,celular;
     private String idUsuario;
 
     public Usuario() {
@@ -47,11 +47,20 @@ public class Usuario {
         this.senha = senha;
     }
 
+    @Exclude
     public String getIdUsuario() {
         return idUsuario;
     }
-
+    @Exclude
     public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
 }

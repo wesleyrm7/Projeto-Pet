@@ -8,9 +8,11 @@
 
     <Button
         android:id="@+id/buttonCadastrar"
-        android:layout_width="347dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="32dp"
         android:text="Cadastrar"
         app:backgroundTint="@color/CorFundSlide"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -96,7 +98,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29"
+        app:layout_constraintVertical_bias="0.23000002"
         app:layout_constraintVertical_chainStyle="packed"
         app:srcCompat="@drawable/icone" />
 
@@ -111,7 +113,7 @@
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Celular"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/buttonCadastrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

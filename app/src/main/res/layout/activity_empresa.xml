@@ -17,7 +17,7 @@
         android:drawablePadding="10dp"
         android:ems="15"
         android:hint="Senha"
-        android:inputType="textPassword"
+        android:inputType="numberDecimal|numberPassword"
         app:layout_constraintBottom_toTopOf="@+id/buttonAcesar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

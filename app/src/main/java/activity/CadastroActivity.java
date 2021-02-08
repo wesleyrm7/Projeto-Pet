@@ -27,7 +27,7 @@ import model.Usuario;
 public class CadastroActivity extends AppCompatActivity {
 
     private Button butCadastro;
-    private EditText Textemail,Textnome,TextSenha;
+    private EditText Textemail,Textnome,TextSenha,TextCelular;
     private FirebaseAuth autenticacao;
     private Usuario usuario;
 
@@ -40,6 +40,7 @@ public class CadastroActivity extends AppCompatActivity {
         Textnome=findViewById(R.id.editNome);
         Textemail=findViewById(R.id.editEmail);
         TextSenha=findViewById(R.id.editSenha);
+        TextCelular=findViewById(R.id.editCelular);
         butCadastro=findViewById(R.id.buttonCadastrar);
 
 
@@ -51,18 +52,27 @@ public class CadastroActivity extends AppCompatActivity {
                 String textoNome = Textnome.getText().toString();
                 String textoEmail = Textemail.getText().toString();
                 String textoSenha = TextSenha.getText().toString();
+                String textoCelular= TextCelular.getText().toString();
 
                 //Validar se os campos foram preenchidos
                 if ( !textoNome.isEmpty() ){
                     if ( !textoEmail.isEmpty() ){
                         if ( !textoSenha.isEmpty() ){
+                            if ( !textoCelular.isEmpty() ){
 
                             usuario = new Usuario();
                             usuario.setNome( textoNome );
                             usuario.setEmail( textoEmail );
                             usuario.setSenha( textoSenha );
+                            usuario.setCelular( textoCelular );
+
                             cadastrarUsuario();
 
+                         }else {
+                                Toast.makeText(CadastroActivity.this,
+                                        "Preencha o Celular !",
+                                        Toast.LENGTH_SHORT).show();
+                            }
                         }else {
                             Toast.makeText(CadastroActivity.this,
                                     "Preencha a senha!",
