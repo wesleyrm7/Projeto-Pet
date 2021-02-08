@@ -27,7 +27,7 @@ import model.Usuario;
 public class CadastroActivity extends AppCompatActivity {
 
     private Button butCadastro;
-    private EditText Textemail,Textnome,TextSenha,TextNumero;
+    private EditText Textemail,Textnome,TextSenha;
     private FirebaseAuth autenticacao;
     private Usuario usuario;
 
@@ -40,7 +40,6 @@ public class CadastroActivity extends AppCompatActivity {
         Textnome=findViewById(R.id.editNome);
         Textemail=findViewById(R.id.editEmail);
         TextSenha=findViewById(R.id.editSenha);
-        TextNumero=findViewById(R.id.editCelular);
         butCadastro=findViewById(R.id.buttonCadastrar);
 
 
@@ -52,29 +51,18 @@ public class CadastroActivity extends AppCompatActivity {
                 String textoNome = Textnome.getText().toString();
                 String textoEmail = Textemail.getText().toString();
                 String textoSenha = TextSenha.getText().toString();
-                String textoCelular= TextNumero.getText().toString();
 
                 //Validar se os campos foram preenchidos
                 if ( !textoNome.isEmpty() ){
                     if ( !textoEmail.isEmpty() ){
                         if ( !textoSenha.isEmpty() ){
-                            if ( !textoCelular.isEmpty() ){
-
-                             finish();
 
                             usuario = new Usuario();
                             usuario.setNome( textoNome );
                             usuario.setEmail( textoEmail );
                             usuario.setSenha( textoSenha );
-                            usuario.setNumero( textoCelular );
                             cadastrarUsuario();
 
-
-                            }else {
-                                Toast.makeText(CadastroActivity.this,
-                                        "Preencha o Celular!",
-                                        Toast.LENGTH_SHORT).show();
-                            }
                         }else {
                             Toast.makeText(CadastroActivity.this,
                                     "Preencha a senha!",
@@ -106,8 +94,9 @@ public class CadastroActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if ( task.isSuccessful() ){
-                    String idUsuario= Base64Custom.codificarBase64(usuario.getEmail());
-                    usuario.setIdUsuario( idUsuario );
+
+                    String idUsuario = Base64Custom.codificarBase64( usuario.getEmail() );
+                    usuario.setIdUsuario(idUsuario);
                     usuario.salvar();
                     finish();
 
@@ -116,12 +105,11 @@ public class CadastroActivity extends AppCompatActivity {
                     String excecao = "";
                     try {
                         throw task.getException();
-
                     }catch ( FirebaseAuthWeakPasswordException e){
                         excecao = "Digite uma senha mais forte!";
                     }catch ( FirebaseAuthInvalidCredentialsException e){
                         excecao= "Por favor, digite um e-mail válido";
-                    }catch ( FirebaseAuthUserCollisionException e) {
+                    }catch ( FirebaseAuthUserCollisionException e){
                         excecao = "Este conta já foi cadastrada";
                     }catch (Exception e){
                         excecao = "Erro verifique sua conexao com internet "  + e.getMessage();

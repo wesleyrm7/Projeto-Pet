@@ -1,5 +1,6 @@
 package config;
 
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -11,7 +12,7 @@ public class ConfiguracaoFireBase {
     private static DatabaseReference firebase;
 
     //Retorna a instancia do FireBaseDataBase , Permite Salvar os Dados no Banco de Dados
-    public static DatabaseReference getFireBaseDatabase(){
+    public static DatabaseReference getFireBaseDataBase(){
         if(firebase == null){
             firebase= FirebaseDatabase.getInstance().getReference();
         }

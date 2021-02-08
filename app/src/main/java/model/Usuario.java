@@ -7,18 +7,22 @@ import config.ConfiguracaoFireBase;
 
 public class Usuario {
 
-    private String nome,email,senha,numero,idUsuario;
+    private String nome,email,senha;
+    private String idUsuario;
 
     public Usuario() {
-    }
 
+    }
     public void salvar(){
-        DatabaseReference firebase= ConfiguracaoFireBase.getFireBaseDatabase();
+        DatabaseReference firebase= ConfiguracaoFireBase.getFireBaseDataBase();
         firebase.child("usuarios")
-                .child( this.idUsuario )
-                  .setValue( this );
+                .child( this.idUsuario)
+                .setValue(this);
+
 
     }
+
+
     public String getNome() {
         return nome;
     }
@@ -43,19 +47,11 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public void setIdUsuario(String idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
-    public String getNumero() {
-        return numero;
-    }
-
     public String getIdUsuario() {
         return idUsuario;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }
