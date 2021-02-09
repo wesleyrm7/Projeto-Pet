@@ -3,6 +3,7 @@ package activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -108,6 +109,7 @@ public class CadastroActivity extends AppCompatActivity {
                     String idUsuario = Base64Custom.codificarBase64( usuario.getEmail() );
                     usuario.setIdUsuario(idUsuario);
                     usuario.salvar();
+
                     finish();
 
                 }else {
@@ -133,6 +135,10 @@ public class CadastroActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void abrirTelaPrincipal(){
+        startActivity(new Intent(this,HomeUsuarioActivity2.class));
+        finish();
     }
 
 }

@@ -1,22 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.baseapp2">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.baseapp2" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
+        android:icon="@drawable/icone"
         android:supportsRtl="true"
-        android:theme="@style/Theme.BaseApp2">
-        <activity android:name="activity.HomeEmpresaActivity"></activity>
+        android:theme="@style/Theme.BaseApp2" >
+        <activity
+            android:name="activity.HomeUsuarioActivity2"
+            android:label="@string/title_activity_home_usuario2"
+            android:theme="@style/Theme.BaseApp2.NoActionBar" >
+        </activity>
+        <activity android:name="activity.HomeEmpresaActivity" />
         <activity android:name="activity.EmpresaActivity" />
         <activity android:name="activity.Apresentacao" />
         <activity android:name="activity.CadastroActivity" />
         <activity android:name="activity.LoginActivity" />
         <activity
             android:name="activity.MainActivity"
-            android:theme="@style/Theme.Intro">
+            android:theme="@style/Theme.Intro" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

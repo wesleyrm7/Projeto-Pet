@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,6 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText Textemail,TextSenha;
     private Button buttonLogin;
     private Usuario usuario;
+
     private FirebaseAuth autenticacao;
 
     @Override
@@ -39,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         Textemail=findViewById(R.id.editEmailL);
         TextSenha=findViewById(R.id.editSenhaL);
         buttonLogin=findViewById(R.id.buttonLogin);
+
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this,
                             "sucesso ao fazer Login",
                             Toast.LENGTH_SHORT).show();
+                    abrirTelaPrincipal();
 
                 }else{
                     //Trata as excessoes
@@ -110,8 +114,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         }) ;
     }
-   /* public void abrirTelaPrincipal(){
-        startActivity(new Intent(this,VisualUsuarioActivity.class));
+    public void abrirTelaPrincipal(){
+        startActivity(new Intent(this,HomeUsuarioActivity2.class));
         finish();//fecha essa activity de login
-    }*/
+    }
 }
